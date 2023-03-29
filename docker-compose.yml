@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  ts-node-docker:
+  api-course-service:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,9 +9,9 @@ services:
     volumes:
       - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: ts-node-docker
+    container_name: api-course-container
     expose:
-      - '4000'
+      - '3001'
     ports:
-      - '4000:4000'
+      - '3001:3001'
     command: npm run dev
